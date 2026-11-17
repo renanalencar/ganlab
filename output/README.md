@@ -1,6 +1,6 @@
-### Deploying Your Demo
+### Implantando Sua Demonstração
 
-Run the following command:
+Execute o seguinte comando:
 
 ```bash
 $ ./scripts/deploy-demo
@@ -8,6 +8,6 @@ Stored bundle in output/bundle.js
 Saved bundled demo at output/index.html
 ```
 
-It will create two files in this folder: `index.html` and `bundle.js`. 
-Then, place these files into a server with `figures/`, `images/`, and `pretrained_models/`.
-Please see the branch `gh-pages` for an example.
+Ele criará dois arquivos nesta pasta: `index.html` e `bundle.js`. 
+Em seguida, coloque esses arquivos em um servidor junto com as pastas `figures/`, `images/` e `pretrained_models/`.
+Consulte a branch `gh-pages` para ver um exemplo.

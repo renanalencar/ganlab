@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
@@ -17,10 +17,10 @@
     <meta property="og:url" content="https://poloclub.github.io/ganlab/" />
     <meta property="og:title" content="GAN Lab" />
     <meta property="og:description"
-      content="GAN Lab: Play with Generative Adversarial Networks in Your Browser!" />
+      content="GAN Lab: Experimente Redes Adversárias Generativas no Seu Navegador!" />
     <meta property="og:image" content="https://poloclub.github.io/ganlab/images/share.png" />
 
-  <title>GAN Lab: Play with Generative Adversarial Networks in Your Browser!</title>
+  <title>GAN Lab: Experimente Redes Adversárias Generativas no Seu Navegador!</title>
   <style>
     html {
       width: 100%;
@@ -188,11 +188,11 @@
   <div id="top-bar">
     <div id="top-bar-panel-container" class="panel-container">
       <div id="tool-description">
-        Play with Generative Adversarial Networks (GANs) in your browser!          
+        Experimente Redes Adversárias Generativas (GANs) no seu navegador!          
       </div>
       <div id="source-link">
-        <a href="https://github.com/poloclub/ganlab" title="Source on GitHub">
-          Fork us on GitHub
+        <a href="https://github.com/poloclub/ganlab" title="Código-fonte no GitHub">
+          Faça um fork no GitHub
           <img src="images/github-mark.png" />
         </a>
       </div>
@@ -201,195 +201,195 @@
       
   <div id="demo">
     <div id="loading">
-      Loading...
+      Carregando...
       <br />
-      <small>It may take a few tens of seconds.</small>
+      <small>Isso pode levar algumas dezenas de segundos.</small>
     </div>
     <gan-lab></gan-lab>
   </div>
 
   <div id="description">
-    <h2>What is a GAN?</h2>
+    <h2>O que é uma GAN?</h2>
     <p>
-      Many machine learning systems look at some kind of complicated input (say, an image) and produce a simple output (a label like, "cat"). By contrast, the goal of a generative model is something like the opposite: take a small piece of input&mdash;perhaps a few random numbers&mdash;and produce a complex output, like an image of a realistic-looking face. A <strong>generative adversarial network (GAN)</strong> is an especially effective type of generative model, <a href="https://arxiv.org/pdf/1406.2661.pdf" title="The original paper by Goodfellow et al. published in 2014">introduced only a few years ago</a>, which has been a subject of intense interest in the machine learning community. 
+      Muitos sistemas de aprendizado de máquina (*machine learning*) analisam algum tipo de entrada complexa (digamos, uma imagem) e produzem uma saída simples (um rótulo como "gato"). Em contraste, o objetivo de um modelo generativo é praticamente o oposto: receber uma pequena entrada&mdash;talvez alguns números aleatórios&mdash;e produzir uma saída complexa, como a imagem de um rosto de aparência realista. Uma <strong>rede adversária generativa (GAN)</strong> é um tipo especialmente eficaz de modelo generativo, <a href="https://arxiv.org/pdf/1406.2661.pdf" title="O artigo original de Goodfellow et al. publicado em 2014">introduzido há apenas alguns anos</a>, que tem sido objeto de intenso interesse na comunidade de aprendizado de máquina. 
     </p>
     
     <p>
-      You might wonder why we want a system that produces realistic images, or plausible simulations of any other kind of data. Besides the intrinsic intellectual challenge, this turns out to be a surprisingly handy tool, with <a href="https://arxiv.org/pdf/1701.00160.pdf" title="See page 4 of this tutorial paper">applications ranging from art to enhancing blurry images</a>.
+      Você pode se perguntar por que queremos um sistema que produza imagens realistas, ou simulações plausíveis de qualquer outro tipo de dado. Além do desafio intelectual intrínseco, isso se revela uma ferramenta surpreendentemente útil, com <a href="https://arxiv.org/pdf/1701.00160.pdf" title="Veja a página 4 deste artigo tutorial">aplicações que vão desde a arte até o aprimoramento de imagens desfocadas</a>.
     </p>      
 
-    <h2>How does a GAN work?</h2>
+    <h2>Como funciona uma GAN?</h2>
     <p>
-      The idea of a machine "creating" realistic images from scratch can seem like magic, but GANs use <em>two key tricks</em> to turn a vague, seemingly impossible goal into reality.
+      A ideia de uma máquina "criar" imagens realistas do zero pode parecer mágica, mas as GANs usam <em>dois truques principais</em> para transformar um objetivo vago e aparentemente impossível em realidade.
     </p>
     
     <p>
-      The first idea, not new to GANs, is to use <em>randomness</em> as an ingredient. At a basic level, this makes sense: it wouldn't be very exciting if you built a system that produced the same face each time it ran. Just as important, though, is that thinking in terms of probabilities also helps us translate the problem of generating images into a natural mathematical framework. We obviously don't want to pick images at uniformly at random, since that would just produce noise. Instead, we want our system to learn about which images are likely to be faces, and which aren't. Mathematically, this involves modeling a probability distribution on images, that is, a function that tells us which images are likely to be faces and which aren't. This type of problem&mdash;modeling a function on a high-dimensional space&mdash;is exactly the sort of thing neural networks are made for.
+      A primeira ideia, que não é exclusiva das GANs, é usar a <em>aleatoriedade</em> como ingrediente. Em um nível básico, isso faz sentido: não seria muito interessante se você construísse um sistema que produzisse o mesmo rosto toda vez que fosse executado. Tão importante quanto isso, porém, é que pensar em termos de probabilidades também nos ajuda a traduzir o problema de gerar imagens para uma estrutura matemática natural. Obviamente, não queremos escolher imagens de forma uniformemente aleatória, pois isso produziria apenas ruído. Em vez disso, queremos que nosso sistema aprenda quais imagens têm probabilidade de serem rostos e quais não têm. Matematicamente, isso envolve modelar uma distribuição de probabilidade sobre imagens, ou seja, uma função que nos diz quais imagens têm probabilidade de serem rostos e quais não têm. Esse tipo de problema&mdash;modelar uma função em um espaço de alta dimensão&mdash;é exatamente o tipo de tarefa para a qual as redes neurais foram feitas.
     </p>
     
     <p>      
-      The big insights that defines a GAN is to set up this modeling problem as a kind of contest. This is where the "adversarial" part of the name comes from. The key idea is to build not one, but two competing networks: a <span style="color: var(--generator-color);"><strong>generator</strong></span> and a <span style="color: var(--discriminator-color);"><strong>discriminator</strong></span>. The generator tries to create random <span style="color: var(--generator-color);">synthetic outputs</span> (for instance, images of faces), while the discriminator tries to tell these apart from <span style="color: var(--real-data-color);">real outputs</span> (say, a database of celebrities). The hope is that as the two networks face off, they'll both get better and better&mdash;with the end result being a generator network that produces realistic outputs.
+      A grande sacada que define uma GAN é configurar esse problema de modelagem como uma espécie de competição. É daí que vem a parte "adversária" do nome. A ideia principal é construir não uma, mas duas redes concorrentes: um <span style="color: var(--generator-color);"><strong>gerador</strong></span> e um <span style="color: var(--discriminator-color);"><strong>discriminador</strong></span>. O gerador tenta criar <span style="color: var(--generator-color);">saídas sintéticas</span> aleatórias (por exemplo, imagens de rostos), enquanto o discriminador tenta diferenciá-las de <span style="color: var(--real-data-color);">saídas reais</span> (digamos, um banco de dados de celebridades). A esperança é que, à medida que as duas redes se enfrentam, ambas fiquem cada vez melhores&mdash;tendo como resultado final uma rede geradora que produz saídas realistas.
     </p>
     
     <p>      
-      To sum up: <strong><em>Generative adversarial networks</em></strong> are neural networks that learn to choose samples from a special distribution (the <em>"generative"</em> part of the name), and they do this by setting up a competition (hence <em>"adversarial"</em>).
+      Resumindo: <strong><em>Redes adversárias generativas</em></strong> são redes neurais que aprendem a escolher amostras de uma distribuição especial (a parte <em>"generativa"</em> do nome), e fazem isso estabelecendo uma competição (daí <em>"adversárias"</em>).
     </p>
 
-    <h2>What's happening in the visualization?</h2>
+    <h2>O que está acontecendo na visualização?</h2>
     <p>
-      GANs are complicated beasts, and the visualization has a lot going on. Here are the basic ideas.
+      As GANs são estruturas complexas, e muita coisa acontece na visualização. Aqui estão as ideias básicas.
     </p>
     
     <p>
-      First, we're not visualizing anything as complex as generating realistic images. Instead, we're showing a GAN that learns a distribution of points in just <em>two dimensions</em>. There's no real application of something this simple, but it's much easier to show the system's mechanics. For one thing, probability distributions in plain old 2D (x,y) space are much easier to visualize than distributions in the space of high-resolution images.  
+      Primeiro, não estamos visualizando nada tão complexo quanto a geração de imagens realistas. Em vez disso, estamos mostrando uma GAN que aprende uma distribuição de pontos em apenas <em>duas dimensões</em>. Não há uma aplicação real para algo tão simples, mas é muito mais fácil mostrar a mecânica do sistema. Por um lado, distribuições de probabilidade no bom e velho espaço 2D (x,y) são muito mais fáceis de visualizar do que distribuições no espaço de imagens de alta resolução.  
     </p>
 
     <h4>
-      Pick a data distribution.
+      Escolha uma distribuição de dados.
     </h4>
     
     <p>
-      At top, you can choose a probability distribution for GAN to learn, which we visualize as <span style="color: var(--real-data-color);">a set of data samples</span>. Once you choose one, we show them at two places: a smaller version in the <em>model overview graph</em> view on the left; and a larger version in the <em>layered distributions</em> view on the right.
+      No topo, você pode escolher uma distribuição de probabilidade para a GAN aprender, a qual visualizamos como <span style="color: var(--real-data-color);">um conjunto de amostras de dados</span>. Assim que você escolhe uma, nós a mostramos em dois lugares: uma versão menor na visualização do <em>grafo de visão geral do modelo</em> à esquerda; e uma versão maior na visualização de <em>distribuições em camadas</em> à direita.
     </p>
     
     <div class="supporting-figure">
       <img src="figures/figure-data-selected.png" />
       <div class="figure-caption">
-        Figure 1. Selected data distribution is shown at two places.
+        Figura 1. A distribuição de dados selecionada é mostrada em dois lugares.
       </div>
     </div>
     
     <p>
-      We designed the two views to help you better understand how a GAN works to generate realistic samples:
+      Projetamos as duas visualizações para ajudar você a entender melhor como uma GAN funciona para gerar amostras realistas:
       <br />
-      (1) The <strong>model overview graph</strong> shows the architecture of a GAN, its major components and how they are connected, and also visualizes results produced by the components;
+      (1) O <strong>grafo de visão geral do modelo</strong> mostra a arquitetura de uma GAN, seus principais componentes e como eles estão conectados, além de visualizar os resultados produzidos pelos componentes;
       <br />
-      (2) The <strong>layered distributions</strong> view overlays the visualizations of the components from the model overview graph, so you can more easily compare the component outputs when analyzing the model.
+      (2) A visualização de <strong>distribuições em camadas</strong> sobrepõe as visualizações dos componentes do grafo de visão geral do modelo, para que você possa comparar mais facilmente as saídas dos componentes ao analisar o modelo.
     </p>
     
     <h4>
-      Let training begin.
+      Que comece o treinamento.
     </h4>
     
     <p>
-      To start training the GAN model, click the play button (<img class="icon" src="figures/figure-icon-play.png" />) on the toolbar. Besides <span style="color: var(--real-data-color);">real samples</span>  from your chosen distribution, you'll also see <span style="color: var(--generator-color);">fake samples</span> that are generated by the model. Fake samples' positions continually updated as the training progresses. A perfect GAN will create fake samples whose distribution is indistinguishable from that of the real samples. When that happens, in the layered distributions view, you will see the two distributions nicely overlap.
+      Para iniciar o treinamento do modelo GAN, clique no botão de reprodução (<img class="icon" src="figures/figure-icon-play.png" />) na barra de ferramentas. Além das <span style="color: var(--real-data-color);">amostras reais</span> da distribuição escolhida, você também verá <span style="color: var(--generator-color);">amostras falsas</span> que são geradas pelo modelo. As posições das amostras falsas são atualizadas continuamente à medida que o treinamento avança. Uma GAN perfeita criará amostras falsas cuja distribuição é indistinguível daquela das amostras reais. Quando isso acontece, na visualização de distribuições em camadas, você verá as duas distribuições se sobreporem perfeitamente.
     </p>
     
     <div class="supporting-figure">
       <img src="figures/figure-animated-ring.gif" />
       <div class="figure-caption">
-        Figure 2. Fake samples' positions continually updated as the training progresses. Then, the distributions of the real and fake samples nicely overlap.
+        Figura 2. As posições das amostras falsas são atualizadas continuamente à medida que o treinamento avança. Então, as distribuições das amostras reais e falsas se sobrepõem perfeitamente.
       </div>
     </div>
     
     <h4>
-      Visualizing generator and discriminator.
+      Visualizando o gerador e o discriminador.
     </h4>
     
     <p>
-      Recall that the <span style="color: var(--generator-color);">generator</span> and <span style="color: var(--discriminator-color);">discriminator</span> within a GAN is having a little contest, competing against each other, iteratively updating the <span style="color: var(--generator-color);">fake samples</span> to become more similar to the <span style="color: var(--real-data-color);">real ones</span>. GAN Lab visualizes the interactions between them. 
+      Lembre-se de que o <span style="color: var(--generator-color);">gerador</span> e o <span style="color: var(--discriminator-color);">discriminador</span> dentro de uma GAN estão travando uma pequena disputa, competindo entre si e atualizando iterativamente as <span style="color: var(--generator-color);">amostras falsas</span> para se tornarem mais semelhantes às <span style="color: var(--real-data-color);">reais</span>. O GAN Lab visualiza as interações entre eles. 
     </p>
     
     <p>
-      <strong>Generator.</strong>
-      As described earlier, the <span style="color: var(--generator-color);">generator</span> is a function that transforms a random input into a synthetic output. In GAN Lab, a random input is a 2D sample with a (x, y) value (drawn from a uniform or Gaussian distribution), and the output is also a 2D sample, but mapped into a different position, which is a <span style="color: var(--generator-color);">fake sample</span>. One way to visualize this mapping is using <em>manifold</em> <small><a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/">[Olah, 2014]</a></small>. The input space is represented as a uniform square grid. As the function maps positions in the input space into new positions, if we visualize the output, the whole grid, now consisting of irregular quadrangles, would look like a warped version of the original regular grid. The area (or density) of each (warped) cell has now changed, and we encode the density as opacity, so a higher opacity means more samples in smaller space. A very fine-grained manifold will look almost the same as the visualization of the fake samples. This visualization shows how the generator learns a mapping function to make its output look similar to the distribution of the <span style="color: var(--real-data-color);">real samples</span>.
+      <strong>Gerador.</strong>
+      Conforme descrito anteriormente, o <span style="color: var(--generator-color);">gerador</span> é uma função que transforma uma entrada aleatória em uma saída sintética. No GAN Lab, uma entrada aleatória é uma amostra 2D com um valor (x, y) (extraída de uma distribuição uniforme ou gaussiana), e a saída também é uma amostra 2D, mas mapeada em uma posição diferente, que é uma <span style="color: var(--generator-color);">amostra falsa</span>. Uma maneira de visualizar esse mapeamento é usando uma <em>variedade (manifold)</em> <small><a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/">[Olah, 2014]</a></small>. O espaço de entrada é representado como uma grade quadrada uniforme. À medida que a função mapeia posições no espaço de entrada para novas posições, se visualizarmos a saída, toda a grade, agora composta por quadriláteros irregulares, parecerá uma versão distorcida da grade regular original. A área (ou densidade) de cada célula (distorcida) mudou, e codificamos a densidade como opacidade; portanto, uma opacidade maior significa mais amostras em um espaço menor. Uma variedade muito refinada parecerá quase igual à visualização das amostras falsas. Esta visualização mostra como o gerador aprende uma função de mapeamento para fazer com que sua saída pareça semelhante à distribuição das <span style="color: var(--real-data-color);">amostras reais</span>.
     </p>
     
     <div class="supporting-figure">
       <img src="figures/figure-generator-transformation.png" />
       <div class="figure-caption">
-        Figure 3. The generator's data transformation is visualized as a manifold, which turns input noise (leftmost) into fake samples (rightmost).
+        Figura 3. A transformação de dados do gerador é visualizada como uma variedade (manifold), que transforma o ruído de entrada (extrema esquerda) em amostras falsas (extrema direita).
       </div>
     </div>
     
     <p>
-      <strong>Discriminator.</strong>
-      As the generator creates <span style="color: var(--generator-color);">fake samples</span>, the <span style="color: var(--discriminator-color);">discriminator</span>, a binary classifier, tries to tell them apart from the <span style="color: var(--real-data-color);">real samples</span>. GAN Lab visualizes its decision boundary as a 2D heatmap (similar to <a href="http://playground.tensorflow.org"><em>TensorFlow Playground</em></a>). The background colors of a grid cell encode the confidence values of the classifier's results. <span style="background-color: var(--real-data-color); color: white;">Darker green</span> means that samples in that region are more likely to be real; <span style="background-color: var(--generator-color); color: white;">darker purple</span>, more likely to be fake. As a GAN approaches the optimum, the whole heatmap will become more <span style="background-color: rgb(117, 117, 117); color: white;">gray</span> overall, signalling that the discriminator can no longer easily distinguish fake examples from the real ones.
+      <strong>Discriminador.</strong>
+      À medida que o gerador cria <span style="color: var(--generator-color);">amostras falsas</span>, o <span style="color: var(--discriminator-color);">discriminador</span>, um classificador binário, tenta diferenciá-las das <span style="color: var(--real-data-color);">amostras reais</span>. O GAN Lab visualiza sua fronteira de decisão como um mapa de calor (*heatmap*) 2D (semelhante ao <a href="http://playground.tensorflow.org"><em>TensorFlow Playground</em></a>). As cores de fundo de uma célula da grade codificam os valores de confiança dos resultados do classificador. <span style="background-color: var(--real-data-color); color: white;">Verde mais escuro</span> significa que as amostras naquela região têm maior probabilidade de serem reais; <span style="background-color: var(--generator-color); color: white;">roxo mais escuro</span>, maior probabilidade de serem falsas. À medida que uma GAN se aproxima do ótimo, todo o mapa de calor se tornará mais <span style="background-color: rgb(117, 117, 117); color: white;">cinza</span> de modo geral, sinalizando que o discriminador não consegue mais distinguir facilmente os exemplos falsos dos reais.
     </p>
     
     <div class="supporting-figure">
       <img src="figures/figure-discriminator-heatmap.png" />
       <div class="figure-caption">
-        Figure 4. The discriminator's performance can be interpreted through a 2D heatmap. Here, the discriminator is performing well, since most real samples lies on its classification surface’s green region (and fake samples on purple region).
+        Figura 4. O desempenho do discriminador pode ser interpretado por meio de um mapa de calor 2D. Aqui, o discriminador está tendo um bom desempenho, já que a maioria das amostras reais encontra-se na região verde de sua superfície de classificação (e as amostras falsas na região roxa).
       </div>
     </div>
     
     <h4>
-      Understanding interplay between generator and discriminator.
+      Entendendo a interação entre o gerador e o discriminador.
     </h4>
     
     <p>
-      In a GAN, its two networks influence each other as they iteratively update themselves. A great use for GAN Lab is to use its visualization to learn how the <span style="color: var(--generator-color);">generator</span> incrementally updates to improve itself to generate fake samples that are increasingly more realistic. The generator does it by trying to fool the <span style="color: var(--discriminator-color);">discriminator</span>. The generator's loss value decreases when the discriminator classifies <span style="color: var(--generator-color);">fake samples</span> as <span style="color: var(--real-data-color);">real</span> (bad for discriminator, but good for generator). GAN Lab visualizes gradients (as <span style="color: var(--gradient-color);">pink lines</span>) for the fake samples such that the generator would achieve its success.
+      Em uma GAN, suas duas redes influenciam uma à outra à medida que se atualizam iterativamente. Um ótimo uso para o GAN Lab é empregar sua visualização para aprender como o <span style="color: var(--generator-color);">gerador</span> se atualiza incrementalmente para melhorar a si mesmo e gerar amostras falsas cada vez mais realistas. O gerador faz isso tentando enganar o <span style="color: var(--discriminator-color);">discriminador</span>. O valor de perda (*loss*) do gerador diminui quando o discriminador classifica <span style="color: var(--generator-color);">amostras falsas</span> como <span style="color: var(--real-data-color);">reais</span> (ruim para o discriminador, mas bom para o gerador). O GAN Lab visualiza os gradientes (como <span style="color: var(--gradient-color);">linhas rosas</span>) para as amostras falsas de forma que o gerador alcance seu objetivo.
     </p>
 
     <div class="supporting-figure">
       <img src="figures/figure-gradients-interplay.png" />
       <div class="figure-caption">
-        Figure 5. Fake samples' movement directions are indicated by the generator’s gradients (pink lines) based on those samples' current locations and the discriminator's curren classification surface (visualized by background colors).
+        Figura 5. As direções de movimento das amostras falsas são indicadas pelos gradientes do gerador (linhas rosas) com base nas localizações atuais dessas amostras e na superfície de classificação atual do discriminador (visualizada pelas cores de fundo).
       </div>
     </div>
     
     <p>
-      This way, the <span style="color: var(--generator-color);">generator</span> gradually improves to produce samples that are even more realistic. Once the fake samples are updated, the <span style="color: var(--discriminator-color);">discriminator</span> will update accordingly to finetune its decision boundary, and awaits the next batch of fake samples that try to fool itself. This iterative update process continues until the discriminator cannot tell <span style="color: var(--real-data-color);">real</span> and <span style="color: var(--generator-color);">fake</span> samples apart.
+      Dessa forma, o <span style="color: var(--generator-color);">gerador</span> melhora gradualmente para produzir amostras ainda mais realistas. Assim que as amostras falsas são atualizadas, o <span style="color: var(--discriminator-color);">discriminador</span> será atualizado de acordo para ajustar sua fronteira de decisão, aguardando o próximo lote de amostras falsas que tentarão enganá-lo. Esse processo de atualização iterativa continua até que o discriminador não consiga mais diferenciar as amostras <span style="color: var(--real-data-color);">reais</span> das <span style="color: var(--generator-color);">falsas</span>.
     </p>
     
     <h4>
-      Playing with interactive features.
+      Explorando os recursos interativos.
     </h4>
     
     <p>
-      GAN Lab has many cool features that support interactive experimentation.
+      O GAN Lab possui muitos recursos interessantes que apoiam a experimentação interativa.
       <dl>
         <dt>
-          Interactive hyperparameter adjustment
+          Ajuste interativo de hiperparâmetros
         </dt>
         <dd>
-          Click the edit icon (<img class="icon" src="figures/figure-icon-edit.png" />) to reveal individual hyperparameters, and edit them on the fly during training.
+          Clique no ícone de edição (<img class="icon" src="figures/figure-icon-edit.png" />) para exibir os hiperparâmetros individuais e editá-los em tempo real durante o treinamento.
         </dd>
         <dt>
-          User-defined data distribution
+          Distribuição de dados definida pelo usuário
         </dt>
         <dd>
-          If you don't like our selection of distributions, draw your own by clicking the icon (<img class="icon" src="figures/figure-icon-draw.png" />) at the end of the data distributions list.
+          Se você não gostar da nossa seleção de distribuições, desenhe a sua própria clicando no ícone (<img class="icon" src="figures/figure-icon-draw.png" />) no final da lista de distribuições de dados.
         </dd>
         <dt>
-          Slow-motion mode
+          Modo câmera lenta
         </dt>
         <dd>
-          Lost track of the animation? Then you can slow it down by clicking the slow-motion icon (<img class="icon" src="figures/figure-icon-slow.png" />) to enter slow-mo. 
-          <a class="video-part-link" data-start="111" data-end="138">Check out this video</a>
+          Perdeu o fio da meada da animação? Você pode desacelerá-la clicando no ícone de câmera lenta (<img class="icon" src="figures/figure-icon-slow.png" />) para entrar no modo câmera lenta. 
+          <a class="video-part-link" data-start="111" data-end="138">Confira este vídeo</a>
         </dd>
         <dt>
-          Manual step-by-step execution
+          Execução manual passo a passo
         </dt>
         <dd>
-          If you want more control, you can manually train individual iteration step by step by clicking the icon (<img class="icon" src="figures/figure-icon-step.png" />).
-          <a class="video-part-link" data-start="139" data-end="190">Check out this video</a>
+          Se você quiser mais controle, pode treinar manualmente cada iteração passo a passo clicando no ícone (<img class="icon" src="figures/figure-icon-step.png" />).
+          <a class="video-part-link" data-start="139" data-end="190">Confira este vídeo</a>
         </dd>
       </dl>
     </p>
     
     <p>
-      Check out the following video for a quick look at GAN Lab's features.
+      Confira o vídeo a seguir para uma rápida olhada nos recursos do GAN Lab.
       <ul>
         <li class="video-part-link" data-start="1" data-end="37">
-          Introduction of GAN Lab 
+          Introdução ao GAN Lab 
           <small>(0:00-0:38)</small>
         </li>
         <li class="video-part-link" data-start="38" data-end="64">
-          Training of a simple distribution with hyperparameter adjustments 
+          Treinamento de uma distribuição simples com ajustes de hiperparâmetros 
           <small>(0:38-1:05)</small>
         </li>
         <li class="video-part-link" data-start="65" data-end="110">
-          Training of a user-defined distribution
+          Treinamento de uma distribuição definida pelo usuário
           <small>(1:05-1:51)</small>
         </li>
         <li class="video-part-link" data-start="111" data-end="138">
-          Slow-motion mode 
+          Modo câmera lenta 
           <small>(1:51-2:19)</small>
         </li>
         <li class="video-part-link" data-start="139" data-end="190">
-          Manual step-by-step execution 
+          Execução manual passo a passo 
           <small>(2:19-3:10)</small>
         </li>
       </ul>
@@ -401,42 +401,42 @@
       </iframe>
     </p>
 
-    <h2>How is it implemented?</h2>
+    <h2>Como foi implementado?</h2>
     <p>
-      GAN Lab uses <a href="https://js.tensorflow.org/"><em>TensorFlow.js</em></a>, 
-      an in-browser GPU-accelerated deep learning library. 
-      Everything, from model training to visualization, is implemented with 
-      JavaScript. You only need a web browser like Chrome to run GAN Lab.
-      Our implementation approach significantly broadens people's access to 
-      interactive tools for deep learning.
-      The source code is available on 
+      O GAN Lab utiliza o <a href="https://js.tensorflow.org/"><em>TensorFlow.js</em></a>, 
+      uma biblioteca de aprendizado profundo acelerada por GPU que roda no navegador. 
+      Tudo, desde o treinamento do modelo até a visualização, é implementado com 
+      JavaScript. Você só precisa de um navegador web como o Chrome para executar o GAN Lab.
+      Nossa abordagem de implementação amplia significativamente o acesso das pessoas a 
+      ferramentas interativas para aprendizado profundo.
+      O código-fonte está disponível no 
       <a href="https://github.com/poloclub/ganlab">GitHub</a>.
     </p>
 
-    <h2>Who developed GAN Lab?</h2>
+    <h2>Quem desenvolveu o GAN Lab?</h2>
     <p>
-      GAN Lab was created by 
+      O GAN Lab foi criado por 
       <a href="https://minsuk.com">Minsuk Kahng</a>,
       <a href="https://nikubaba.com">Nikhil Thorat</a>, 
       <a href="https://poloclub.github.io/polochau/">Polo Chau</a>, 
-      <a href="http://www.fernandaviegas.com/">Fernanda Viégas</a>, and 
+      <a href="http://www.fernandaviegas.com/">Fernanda Viégas</a> e 
       <a href="http://www.bewitched.com/">Martin Wattenberg</a>,
-      which was the result of a research collaboration between 
-      Georgia Tech and Google
+      sendo o resultado de uma colaboração de pesquisa entre a 
+      Georgia Tech e o Google
       Brain/<a href="https://pair.withgoogle.com">PAIR</a>.
-      We also thank Shan Carter and Daniel Smilkov, 
-      <a href="https://research.google.com/bigpicture/">
-        Google Big Picture team</a> and 
+      Agradecemos também a Shan Carter e Daniel Smilkov, 
+      à <a href="https://research.google.com/bigpicture/">
+        equipe Google Big Picture</a> e ao 
       <a href="https://pair.withgoogle.com">
-        Google People + AI Research (PAIR)</a>, and 
+        Google People + AI Research (PAIR)</a>, além do 
       <a href="http://vis.gatech.edu/">Georgia Tech Visualization Lab</a> 
-      for their feedback.
+      pelo feedback.
     </p>
     
     <p style="margin-bottom: 0;">
-      For more information, check out 
+      Para mais informações, confira 
       <a href="http://minsuk.com/papers/kahng-ganlab-vis2018.pdf">
-        our research paper</a>:     
+        nosso artigo científico</a>:     
     </p>
 
     <a href="http://minsuk.com/papers/kahng-ganlab-vis2018.pdf">

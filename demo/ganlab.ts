@@ -633,7 +633,7 @@ class GANLab extends GANLabPolymer {
 
   private onClickFinishDrawingButton() {
     if (this.drawing.drawingPositions.length === 0) {
-      alert('Draw something on canvas');
+      alert('Desenhe algo na tela');
     } else {
       const drawingElement =
         this.querySelector('#drawing-container') as HTMLElement;
@@ -1626,8 +1626,8 @@ class GANLab extends GANLabPolymer {
       this.costChart.destroy();
     }
     const costChartSpecification = [
-      { label: 'Discriminator\'s Loss', color: 'rgba(5, 117, 176, 0.5)' },
-      { label: 'Generator\'s Loss', color: 'rgba(123, 50, 148, 0.5)' }
+      { label: 'Perda do Discriminador', color: 'rgba(5, 117, 176, 0.5)' },
+      { label: 'Perda do Gerador', color: 'rgba(123, 50, 148, 0.5)' }
     ];
     this.costChart = this.createChart(
       'cost-chart', this.costChartData, costChartSpecification, 0);
@@ -1640,8 +1640,8 @@ class GANLab extends GANLabPolymer {
       this.evalChart.destroy();
     }
     const evalChartSpecification = [
-      { label: 'KL Divergence (by grid)', color: 'rgba(220, 80, 20, 0.5)' },
-      { label: 'JS Divergence (by grid)', color: 'rgba(200, 150, 10, 0.5)' }
+      { label: 'Divergência KL (por grade)', color: 'rgba(220, 80, 20, 0.5)' },
+      { label: 'Divergência JS (por grade)', color: 'rgba(200, 150, 10, 0.5)' }
     ];
     this.evalChart = this.createChart(
       'eval-chart', this.evalChartData, evalChartSpecification, 0);

@@ -1,37 +1,37 @@
-# GAN Lab: An Interactive, Visual Experimentation Tool for Generative Adversarial Networks
+# GAN Lab: Uma Ferramenta de Experimentação Visual e Interativa para Redes Adversárias Generativas
 
-By 
+Por 
 [Minsuk Kahng](https://minsuk.com),
 [Nikhil Thorat](https://nikubaba.com),
 [Polo Chau](https://poloclub.github.io/polochau/),
-[Fernanda Viégas](http://www.fernandaviegas.com), and 
+[Fernanda Viégas](http://www.fernandaviegas.com) e 
 [Martin Wattenberg](https://www.bewitched.com)
 
-## Overview
+## Visão Geral
 
-GAN Lab is a novel interactive visualization tool for anyone to learn and experiment with Generative Adversarial Networks (GANs), a popular class of complex deep learning models. With GAN Lab, you can interactively train GAN models for 2D data distributions and visualize their inner-workings, similar to [TensorFlow Playground](http://playground.tensorflow.org/).
+O GAN Lab é uma ferramenta inovadora de visualização interativa para qualquer pessoa aprender e experimentar com Redes Adversárias Generativas (GANs, do inglês *Generative Adversarial Networks*), uma classe popular de modelos complexos de aprendizado profundo (*deep learning*). Com o GAN Lab, você pode treinar interativamente modelos GAN para distribuições de dados 2D e visualizar seu funcionamento interno, de forma semelhante ao [TensorFlow Playground](http://playground.tensorflow.org/).
 
-GAN Lab uses [TensorFlow.js](https://js.tensorflow.org/), an in-browser GPU-accelerated deep learning library. Everything, from model training to visualization, is implemented with JavaScript. Users only need a web browser like Chrome to run GAN Lab. Our implementation approach significantly broadens people's access to interactive tools for deep learning. 
+O GAN Lab utiliza o [TensorFlow.js](https://js.tensorflow.org/), uma biblioteca de aprendizado profundo acelerada por GPU que roda diretamente no navegador. Tudo, desde o treinamento do modelo até a visualização, é implementado em JavaScript. Os usuários precisam apenas de um navegador web como o Chrome para executar o GAN Lab. Nossa abordagem de implementação amplia significativamente o acesso das pessoas a ferramentas interativas de aprendizado profundo.
 
-![Screenshot of GAN Lab](ganlab-teaser.png)
+![Captura de tela do GAN Lab](ganlab-teaser.png)
 
 
-## Working Demo
+## Demonstração Funcional
 
-Click the following link:
+Clique no seguinte link:
 
 [https://poloclub.github.io/ganlab/](https://poloclub.github.io/ganlab/)
 
-It runs on most modern web browsers. We suggest you use Google Chrome.
+Funciona na maioria dos navegadores web modernos. Sugerimos o uso do Google Chrome.
 
 
-## Development
+## Desenvolvimento
 
-This section describes how you can develop GAN Lab.
+Esta seção descreve como você pode desenvolver o GAN Lab.
 
-### Install Dependencies
+### Instalar Dependências
 
-Run the following commands: 
+Execute os seguintes comandos: 
 
 ```bash
 $ git clone https://github.com/poloclub/ganlab.git
@@ -39,12 +39,12 @@ $ cd ganlab
 $ yarn prep
 ```
 
-It's unlikely, but you may need to install some basic JavaScript-related dependencies (e.g., yarn).
+Embora seja improvável, pode ser necessário instalar algumas dependências básicas relacionadas a JavaScript (por exemplo, yarn).
 
 
-### Running Your Demo
+### Executando Sua Demonstração
 
-Run the following command:
+Execute o seguinte comando:
 
 ```bash
 $ ./scripts/watch-demo
@@ -57,34 +57,34 @@ $ ./scripts/watch-demo
 >> Hit CTRL-C to stop the server
 ```
 
-Then visit `http://localhost:8080/demo/`. 
+Em seguida, acesse `http://localhost:8080/demo/`. 
 
-The `watch-demo` script monitors for changes of typescript code (e.g., `demo/ganlab.ts`)
-and compiles the code for you.
+O script `watch-demo` monitora alterações no código TypeScript (por exemplo, `demo/ganlab.ts`)
+e compila o código para você.
 
 
-## Credit
+## Créditos
 
-GAN Lab was created by 
+O GAN Lab foi criado por 
 [Minsuk Kahng](https://minsuk.com),
 [Nikhil Thorat](https://nikubaba.com),
 [Polo Chau](https://poloclub.github.io/polochau/),
-[Fernanda Viégas](http://www.fernandaviegas.com/), and 
+[Fernanda Viégas](http://www.fernandaviegas.com/) e 
 [Martin Wattenberg](http://www.bewitched.com/),
-which was the result of a research collaboration between Georgia Tech and Google Brain/[PAIR](https://pair.withgoogle.com).
-We also thank Shan Carter and Daniel Smilkov, 
-[Google Big Picture team](https://research.google.com/bigpicture/) and 
-[Google People + AI Research (PAIR)](https://pair.withgoogle.com), and 
+sendo o resultado de uma colaboração de pesquisa entre a Georgia Tech e o Google Brain/[PAIR](https://pair.withgoogle.com).
+Agradecemos também a Shan Carter e Daniel Smilkov, 
+à [equipe Google Big Picture](https://research.google.com/bigpicture/) e ao 
+[Google People + AI Research (PAIR)](https://pair.withgoogle.com), além do 
 [Georgia Tech Visualization Lab](http://vis.gatech.edu/)
-for their feedback.
+pelo feedback.
  
-For more information, check out 
-[our research paper](http://minsuk.com/papers/kahng-ganlab-vis2018.pdf):     
+Para mais informações, confira 
+[nosso artigo científico](http://minsuk.com/papers/kahng-ganlab-vis2018.pdf):     
  
 [Minsuk Kahng](https://minsuk.com),
 [Nikhil Thorat](https://nikubaba.com),
 [Polo Chau](https://poloclub.github.io/polochau/),
-[Fernanda Viégas](http://www.fernandaviegas.com/), and 
+[Fernanda Viégas](http://www.fernandaviegas.com/) e 
 [Martin Wattenberg](http://www.bewitched.com/).
 "GAN Lab: Understanding Complex Deep Generative Models using Interactive Visual Experimentation."
 *IEEE Transactions on Visualization and Computer Graphics, 25(1) (VIS 2018)*, Jan. 2019.

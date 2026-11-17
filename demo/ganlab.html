@@ -649,48 +649,48 @@
         <div id="page-title" class="top-panel-item"><strong>GAN</strong> Lab</div>
 
         <div id="distribution-selection" class="top-panel-item">
-          <div class="top-column-title">Data Distribution</div>
+          <div class="top-column-title">Distribuição de Dados</div>
           <div id="distribution-image-list">
             <div class="distribution-image">
               <img class="distribution-item"
                 id="distribution-item-line" 
                 data-distribution-name="line" 
-                title="Simple line"
+                title="Linha simples"
                 src="images/distribution-line.png" />
             </div>
             <div class="distribution-image">
               <img class="distribution-item selected" 
                 id="distribution-item-gaussians" 
                 data-distribution-name="gaussians" 
-                title="Mixture of Gaussians" 
+                title="Mistura de gaussianas" 
                 src="images/distribution-gaussians.png" />
             </div>
             <div class="distribution-image">
               <img class="distribution-item" 
                 id="distribution-item-ring" 
                 data-distribution-name="ring"
-                title="Ring" 
+                title="Anel" 
                 src="images/distribution-ring.png" />
             </div>
             <div class="distribution-image">
               <img class="distribution-item" 
                 id="distribution-item-disjoint" 
                 data-distribution-name="disjoint" 
-                title="3 disjoint regions" 
+                title="3 regiões disjuntas" 
                 src="images/distribution-disjoint.png" />
             </div>
             <div class="distribution-image">
               <i class="distribution-item material-icons" 
                 id="distribution-item-drawing" 
                 data-distribution-name="drawing"
-                title="Draw one by yourself">brush</i>
+                title="Desenhe você mesmo">brush</i>
             </div>
           </div>
           <div id="distribution-selection-checkbox">
             <paper-checkbox id="toggle-pretrained" 
-              title="Train on top of a pre-trained model or train from scratch"
+              title="Treinar sobre um modelo pré-treinado ou treinar do zero"
               checked>
-              Use pre-trained model
+              Usar modelo pré-treinado
             </paper-checkbox>
           </div>
         </div>
@@ -698,17 +698,17 @@
         <div id="timeline-controls" class="top-panel-item">
           <button 
             class="mdl-button mdl-js-button mdl-button--icon ui-resetButton"
-            id="reset-button" title="Reset the model">
+            id="reset-button" title="Reiniciar o modelo">
             <i class="material-icons" id="button-top-reset">replay</i>
           </button>
           <button class="mdl-button mdl-js-button mdl-button--fab 
             mdl-button--colored ui-playButton"
-            id="play-pause-button" title="Run/Pause training">
+            id="play-pause-button" title="Executar/Pausar treinamento">
             <i class="material-icons" id="button-top-play">play_arrow</i>
             <i class="material-icons" id="button-top-pause">pause</i>
           </button>
           <button class="mdl-button mdl-js-button mdl-button--icon"
-            id="slow-step" title="Slow-motion mode" 
+            id="slow-step" title="Modo câmera lenta" 
             style="margin-left: 5px">
             <i class="material-icons" id="button-top-slow">
               slow_motion_video
@@ -716,35 +716,35 @@
           </button>
           <button 
             class="mdl-button mdl-js-button mdl-button--icon ui-stepButton"
-            id="next-step-button" title="Train for one epoch" 
+            id="next-step-button" title="Treinar por uma época" 
             style="margin-left: 5px">
             <i class="material-icons" id="button-top-next">skip_next</i>
           </button>
 
           <div id="step-buttons" style="display: none">
             <button id="next-step-g-button" 
-              title="Train only generator for one epoch">
-              Generator
+              title="Treinar apenas o gerador por uma época">
+              Gerador
             </button>
             <button id="next-step-d-button" 
-              title="Train only discriminator for one epoch">
-              Discriminator
+              title="Treinar apenas o discriminador por uma época">
+              Discriminador
             </button>
             <button id="next-step-all-button" 
-              title="Train both discriminator and generator for one epoch">
-              Both
+              title="Treinar discriminador e gerador por uma época">
+              Ambos
             </button>
           </div>
         </div>
 
         <div id="iteration" class="top-panel-item">
-          <div class="top-column-title">Epoch</div>
+          <div class="top-column-title">Época</div>
           <div id="iteration-count">0</div>
         </div>
 
         <div id="save" class="top-panel-item">
           <button class="mdl-button mdl-js-button mdl-button--icon"
-            id="save-model" title="Save model" style="margin-left: 5px">
+            id="save-model" title="Salvar modelo" style="margin-left: 5px">
             <i class="material-icons">save_alt</i>
           </button>
         </div>
@@ -755,10 +755,10 @@
       <div id="main-panel-container" class="panel-container">
         <div id="model-visualization-container" class="panel-item">
           <div class="panel-title" style="padding-left: 5px;"
-            title="Shows the architecture of a model and data flow">
-            Model Overview Graph
+            title="Mostra a arquitetura do modelo e o fluxo de dados">
+            Grafo de Visão Geral do Modelo
             <button class="mdl-button mdl-js-button mdl-button--icon"
-              id="edit-model-button" title="Show/hide hyperparameters">
+              id="edit-model-button" title="Mostrar/ocultar hiperparâmetros">
               <i class="material-icons" id="button-graph-edit">mode_edit</i>
             </button>
           </div>
@@ -798,18 +798,18 @@
               <div id="component-d-loss" class="model-component"
                 style="top: 160px; left: 667px">
                 <div id="d-loss-bar" class="loss-bar" title=""></div>
-                <div class="component-loss-label">Discriminator<br />loss</div>
+                <div class="component-loss-label">Perda do<br />discriminador</div>
                 <div class="component-tooltip">
-                  <span id="d-loss-value" title="loss"></span>
+                  <span id="d-loss-value" title="perda"></span>
                 </div>
               </div>
 
               <div id="component-g-loss" class="model-component"
                 style="top: 275px; left: 667px">
                 <div id="g-loss-bar" class="loss-bar" title=""></div>
-                <div class="component-loss-label">Generator<br />loss</div>
+                <div class="component-loss-label">Perda do<br />gerador</div>
                 <div class="component-tooltip">
-                  <span id="g-loss-value" title="loss"></span>
+                  <span id="g-loss-value" title="perda"></span>
                 </div>
               </div>
 
@@ -836,7 +836,7 @@
                   <div class="up-down-buttons">
                     <button class="mdl-button mdl-js-button mdl-button--icon"
                       id="k-d-steps-add-button" 
-                      title="Increase a step per epoch">
+                      title="Aumentar passo por época">
                       <i class="material-icons" id="button-k-d-steps-up">
                         keyboard_arrow_up
                       </i>
@@ -844,7 +844,7 @@
                     <br />
                     <button class="mdl-button mdl-js-button mdl-button--icon"
                       id="k-d-steps-remove-button" 
-                      title="Decrease a step per iter">
+                      title="Diminuir passo por iteração">
                       <i class="material-icons" id="button-k-d-steps-down">
                         keyboard_arrow_down
                       </i>
@@ -852,7 +852,7 @@
                   </div>
                   <div class="up-down-buttons">
                     <label>
-                      <span id="k-d-steps">2</span> update(s) per epoch</label>
+                      <span id="k-d-steps">2</span> atualiz./época</label>
                   </div>
                 </div>
               </div>
@@ -863,7 +863,7 @@
                   <div class="up-down-buttons">
                     <button class="mdl-button mdl-js-button mdl-button--icon"
                       id="k-g-steps-add-button" 
-                      title="Increase a step per epoch">
+                      title="Aumentar passo por época">
                       <i class="material-icons" id="button-k-g-steps-up">
                         keyboard_arrow_up
                       </i>
@@ -871,7 +871,7 @@
                     <br />
                     <button class="mdl-button mdl-js-button mdl-button--icon"
                       id="k-g-steps-remove-button" 
-                      title="Decrease a step per epoch">
+                      title="Diminuir passo por época">
                       <i class="material-icons" id="button-k-g-steps-down">
                         keyboard_arrow_down
                       </i>
@@ -879,7 +879,7 @@
                   </div>
                   <div class="up-down-buttons">
                     <label>
-                      <span id="k-g-steps">1</span> update(s) per epoch</label>
+                      <span id="k-g-steps">1</span> atualiz./época</label>
                   </div>
                 </div>
               </div>
@@ -889,7 +889,7 @@
                 style="top: 55px; left: 440px">
                 <div class="config-item" style="width: 120px">
                   <div class="up-down-buttons">
-                    <label>Optimizer:</label>
+                    <label>Otimizador:</label>
                   </div>
                   <div class="up-down-buttons" style="width: 65px">
                     <paper-dropdown-menu no-animations no-label-float>
@@ -908,7 +908,7 @@
                 </div>
                 <div class="config-item" style="width: 120px">
                   <div class="up-down-buttons">
-                    <label>Learning rate:</label>
+                    <label>Taxa de apr.:</label>
                   </div>
                   <div class="up-down-buttons" style="width: 48px">
                     <paper-dropdown-menu no-animations no-label-float>
@@ -931,7 +931,7 @@
                 style="top: 335px; left: 180px">
                 <div class="config-item" style="width: 120px">
                   <div class="up-down-buttons">
-                    <label>Optimizer:</label>
+                    <label>Otimizador:</label>
                   </div>
                   <div class="up-down-buttons" style="width: 65px">
                     <paper-dropdown-menu no-animations no-label-float>
@@ -950,7 +950,7 @@
                 </div>
                 <div class="config-item" style="width: 120px">
                   <div class="up-down-buttons">
-                    <label>Learning rate:</label>
+                    <label>Taxa de apr.:</label>
                   </div>
                   <div class="up-down-buttons" style="width: 48px">
                     <paper-dropdown-menu no-animations no-label-float>
@@ -971,25 +971,25 @@
 
               <div id="component-true-prediction" class="model-component"
                 style="top: 136px; left: 525px">
-                <div class="component-sub-label">Real</div>
+                <div class="component-sub-label">Reais</div>
                 <svg id="svg-true-prediction"></svg>
               </div>
 
               <div id="component-generated-prediction" class="model-component"
                 style="top: 230px; left: 525px">
-                <div class="component-sub-label">Fake</div>
+                <div class="component-sub-label">Falsas</div>
                 <svg id="svg-generated-prediction"></svg>
-                <div class="component-label">Prediction of<br />Samples</div>
+                <div class="component-label">Predição de<br />Amostras</div>
               </div>
 
               <div id="component-discriminator"
                 class="model-component model-component-model"
                 style="top: 136px; left: 372px">
                 <svg id="svg-discriminator-output"></svg>
-                <div class="component-label">Discriminator
+                <div class="component-label">Discriminador
                   <div id="overlap-toggle" class="checkbox-toggle">
                     <paper-checkbox type="checkbox" id="overlap-plots" checked
-                      title="show/hide discriminator's classification">
+                      title="mostrar/ocultar classificação do discriminador">
                     </paper-checkbox>
                   </div>
                 </div>
@@ -1001,14 +1001,14 @@
                 <div class="config-item" style="width: 175px">
                   <div class="up-down-buttons">
                     <button class="mdl-button mdl-js-button mdl-button--icon"
-                      id="d-layers-add-button" title="Add a layer">
+                      id="d-layers-add-button" title="Adicionar camada">
                       <i class="material-icons" id="button-d-layers-up">
                         keyboard_arrow_up
                       </i>
                     </button>
                     <br />
                     <button class="mdl-button mdl-js-button mdl-button--icon"
-                      id="d-layers-remove-button" title="Remove a layer">
+                      id="d-layers-remove-button" title="Remover camada">
                       <i class="material-icons" id="button-d-layers-down">
                         keyboard_arrow_down
                       </i>
@@ -1016,12 +1016,12 @@
                   </div>
                   <div class="up-down-buttons">
                     <label>
-                      <span id="num-d-layers">1</span> hidden layer(s)</label>
+                      <span id="num-d-layers">1</span> camada(s) oculta(s)</label>
                   </div>
                   <div class="up-down-buttons">
                     <button class="mdl-button mdl-js-button mdl-button--icon"
                       id="d-neurons-add-button" 
-                      title="Add a neuron for each layer">
+                      title="Adicionar neurônio a cada camada">
                       <i class="material-icons" id="button-d-neurons-up">
                         keyboard_arrow_up
                       </i>
@@ -1029,14 +1029,14 @@
                     <br />
                     <button class="mdl-button mdl-js-button mdl-button--icon"
                       id="d-neurons-remove-button" 
-                      title="Remove a neuron for each layer">
+                      title="Remover neurônio de cada camada">
                       <i class="material-icons" id="button-d-neurons-down">
                         keyboard_arrow_down
                       </i>
                     </button>
                   </div>
                   <div class="up-down-buttons">
-                    <label><span id="num-d-neurons">8</span> neuron(s)</label>
+                    <label><span id="num-d-neurons">8</span> neurônio(s)</label>
                   </div>
                 </div>
               </div>
@@ -1045,9 +1045,9 @@
                 class="model-component model-component-model"
                 style="top: 136px; left: 102px">
                   <svg id="svg-generator-manifold"></svg>
-                  <div class="component-label">Generator
+                  <div class="component-label">Gerador
                     <div id="manifold-toggle" class="checkbox-toggle"
-                      title="show/hide generator's manifold">
+                      title="mostrar/ocultar variedade (manifold) do gerador">
                       <paper-checkbox type="checkbox" id="enable-manifold">
                       </paper-checkbox>
                     </div>
@@ -1060,14 +1060,14 @@
                 <div class="config-item" style="width: 175px">
                   <div class="up-down-buttons">
                     <button class="mdl-button mdl-js-button mdl-button--icon"
-                      id="g-layers-add-button" title="Add a layer">
+                      id="g-layers-add-button" title="Adicionar camada">
                       <i class="material-icons" id="button-g-layer-up">
                         keyboard_arrow_up
                       </i>
                     </button>
                     <br />
                     <button class="mdl-button mdl-js-button mdl-button--icon"
-                      id="g-layers-remove-button" title="Remove a layer">
+                      id="g-layers-remove-button" title="Remover camada">
                       <i class="material-icons" id="button-g-layer-down">
                         keyboard_arrow_down
                       </i>
@@ -1075,12 +1075,12 @@
                   </div>
                   <div class="up-down-buttons">
                     <label>
-                      <span id="num-g-layers">1</span> hidden layer(s)</label>
+                      <span id="num-g-layers">1</span> camada(s) oculta(s)</label>
                   </div>
                   <div class="up-down-buttons">
                     <button class="mdl-button mdl-js-button mdl-button--icon"
                       id="g-neurons-add-button" 
-                      title="Add a neuron for each layer">
+                      title="Adicionar neurônio a cada camada">
                       <i class="material-icons" id="button-g-neurons-up">
                         keyboard_arrow_up
                       </i>
@@ -1088,14 +1088,14 @@
                     <br />
                     <button class="mdl-button mdl-js-button mdl-button--icon"
                       id="g-neurons-remove-button" 
-                      title="Remove a neuron for each layer">
+                      title="Remover neurônio de cada camada">
                       <i class="material-icons" id="button-g-neurons-down">
                         keyboard_arrow_down
                       </i>
                     </button>
                   </div>
                   <div class="up-down-buttons">
-                    <label><span id="num-g-neurons">8</span> neuron(s)</label>
+                    <label><span id="num-g-neurons">8</span> neurônio(s)</label>
                   </div>
                 </div>
               </div>
@@ -1103,15 +1103,15 @@
               <div id="component-discriminator-gradients" 
                 class="model-component"
                 style="top: 7px; left: 430px">
-                <div class="component-label">Gradients</div>
+                <div class="component-label">Gradientes</div>
               </div>
 
               <div id="component-generator-gradients" class="model-component"
                 style="top: 390px; left: 255px">
                 <svg id="svg-generator-gradients"></svg>
-                <div class="component-label">Gradients
+                <div class="component-label">Gradientes
                   <div id="g-gradients-toggle" class="checkbox-toggle"
-                    title="show/hide gradients for generator"
+                    title="mostrar/ocultar gradientes para o gerador"
                     style="right: 13px; top: -1px">
                     <paper-checkbox type="checkbox" id="show-g-gradients" 
                       checked>
@@ -1122,9 +1122,9 @@
 
               <div id="component-true-samples" class="model-component"
                 style="top: 136px; left: 255px">
-                <div class="component-sub-label">Real
+                <div class="component-sub-label">Reais
                   <div id="t-samples-toggle" class="checkbox-toggle"
-                    title="show/hide real samples">
+                    title="mostrar/ocultar amostras reais">
                     <paper-checkbox type="checkbox" id="show-t-samples" 
                       checked>
                     </paper-checkbox>
@@ -1135,22 +1135,22 @@
 
               <div id="component-generated-samples" class="model-component"
                 style="top: 230px; left: 255px">
-                <div class="component-sub-label">Fake
+                <div class="component-sub-label">Falsas
                   <div id="g-samples-toggle" class="checkbox-toggle"
-                    title="show/hide fake samples">
+                    title="mostrar/ocultar amostras falsas">
                     <paper-checkbox type="checkbox" id="show-g-samples" 
                       checked>
                     </paper-checkbox>
                   </div>
                 </div>
                 <svg id="svg-generated-samples"></svg>
-                <div class="component-label">Samples</div>
+                <div class="component-label">Amostras</div>
               </div>
 
               <div id="component-noise" class="model-component"
                 style="top: 230px; left: -15px">
                 <svg id="svg-noise"></svg>
-                <div class="component-label">Noise</div>
+                <div class="component-label">Ruído</div>
               </div>
 
               <div id="component-options-noise" class="model-component-options"
@@ -1176,54 +1176,54 @@
                 class="tooltip tooltip-for-d"
                 style="top: 0; left: 0px">
                 <div class="tooltip-number">1</div>
-                Generator derives samples from noise
+                Gerador obtém amostras a partir do ruído
               </div>
               <div id="tooltip-d-prediction" class="tooltip tooltip-for-d"
                 style="top: 0; left: 150px">
                 <div class="tooltip-number">2</div>
-                Discriminator classifies samples
+                Discriminador classifica amostras
               </div>
               <div id="tooltip-d-loss" class="tooltip tooltip-for-d"
                 style="top: 0; left: 300px">
                 <div class="tooltip-number">3</div>
-                Computes discriminator loss
+                Calcula a perda do discriminador
               </div>
               <div id="tooltip-d-gradients" class="tooltip tooltip-for-d"
                 style="top: 0; left: 450px">
                 <div class="tooltip-number">4</div>
-                Computes discriminator gradients
+                Calcula os gradientes do discriminador
               </div>
               <div id="tooltip-update-discriminator" 
                 class="tooltip tooltip-for-d"
                 style="top: 0; left: 600px">
                 <div class="tooltip-number">5</div>
-                Updates discriminator based on gradients
+                Atualiza o discriminador com base nos gradientes
               </div>
               <div id="tooltip-g-generated-samples" 
                 class="tooltip tooltip-for-g"
                 style="top: 500px; left: 0px">
                 <div class="tooltip-number">1</div>
-                Generator derives samples from noise
+                Gerador obtém amostras a partir do ruído
               </div>
               <div id="tooltip-g-prediction" class="tooltip tooltip-for-g"
                 style="top: 500px; left: 150px">
                 <div class="tooltip-number">2</div>
-                Discriminator classifies fake samples only
+                Discriminador classifica apenas amostras falsas
               </div>
               <div id="tooltip-g-loss" class="tooltip tooltip-for-g"
                 style="top: 500px; left: 300px">
                 <div class="tooltip-number">3</div>
-                Computes generator loss
+                Calcula a perda do gerador
               </div>
               <div id="tooltip-g-gradients" class="tooltip tooltip-for-g"
                 style="top: 500px; left: 450px">
                 <div class="tooltip-number">4</div>
-                Computes generator gradients
+                Calcula os gradientes do gerador
               </div>
               <div id="tooltip-update-generator" class="tooltip tooltip-for-g"
                 style="top: 500px; left: 600px">
                 <div class="tooltip-number">5</div>
-                Updates generator based on gradients
+                Atualiza o gerador com base nos gradientes
               </div>
             </div>
           </div>
@@ -1233,9 +1233,9 @@
 
         <div id="visualization-container" class="panel-item">
           <div class="panel-title"
-            title="Visualizes components in the model overview graph as 
-multiple layers. The layers can be turned on or off using checkboxes.">
-            Layered Distributions
+            title="Visualiza componentes do grafo de visão geral do modelo como 
+múltiplas camadas. As camadas podem ser ativadas ou desativadas usando as caixas de seleção.">
+            Distribuições em Camadas
           </div>
 
           <div id="vis-content-container">
@@ -1258,49 +1258,49 @@ multiple layers. The layers can be turned on or off using checkboxes.">
 
             <div id="layers-descriptions">
               <div class="layers-descriptions-section">
-                Each dot is a 2D data sample:
+                Cada ponto é uma amostra de dados 2D:
                 <span id="toggle-right-real-samples" 
                   class="toggle-right checked"
-                  title="click to toggle this layer"
-                  style="color: var(--real-data-color);">real samples</span>;
+                  title="clique para alternar esta camada"
+                  style="color: var(--real-data-color);">amostras reais</span>;
                 <span id="toggle-right-fake-samples"
                   class="toggle-right checked"
-                  title="click to toggle this layer"
-                  style="color: var(--generator-color);">fake samples</span>.
+                  title="clique para alternar esta camada"
+                  style="color: var(--generator-color);">amostras falsas</span>.
               </div>
               <div class="layers-descriptions-section">
-                Background colors of grid cells represent
+                As cores de fundo das células da grade representam as classificações do
                 <span id="toggle-right-discriminator"
                   class="toggle-right checked"
-                  title="click to toggle this layer"
+                  title="clique para alternar esta camada"
                   style="color: rgb(64, 128, 247);">
-                    discriminator</span>'s classifications.
+                    discriminador</span>.
                 <br />
-                Samples in
-                <span style="color: var(--real-data-color);">green regions</span>
-                are likely to be real;
-                those in
-                <span style="color: var(--generator-color);">purple regions</span>
-                likely fake.
+                Amostras em
+                <span style="color: var(--real-data-color);">regiões verdes</span>
+                têm probabilidade de serem reais;
+                aquelas em
+                <span style="color: var(--generator-color);">regiões roxas</span>
+                provavelmente falsas.
               </div>
               <div class="layers-descriptions-section">
-                <strong>Manifold</strong> represents
+                A <strong>Variedade (Manifold)</strong> representa os resultados da transformação do
                 <span id="toggle-right-generator"
                   class="toggle-right"
-                  title="click to toggle this layer"
+                  title="clique para alternar esta camada"
                   style="color: var(--generator-color);">
-                    generator</span>'s transformation results from noise space.
+                    gerador</span> a partir do espaço de ruído.
                 <br />
-                Opacity encodes density:
-                darker purple means more samples in smaller area.
+                A opacidade codifica a densidade:
+                roxo mais escuro significa mais amostras em uma área menor.
               </div>
               <div class="layers-descriptions-section"> 
-                Pink lines from fake samples represent
+                Linhas rosas a partir de amostras falsas representam os
                 <span id="toggle-right-gradients"
                   class="toggle-right checked"
-                  title="click to toggle this layer"
+                  title="clique para alternar esta camada"
                   style="color: var(--gradient-color);">
-                  gradients</span> for generator.
+                  gradientes</span> para o gerador.
                 <br />
                 <svg width="12" height="12">
                   <circle class="generated-dot" r="2"
@@ -1309,8 +1309,8 @@ multiple layers. The layers can be turned on or off using checkboxes.">
                     transform="translate(2,10)"
                     points="0,0 1,1 10,-10 -1,-1"></polygon>
                 </svg> 
-                This sample needs to move upper right 
-                to decrease generator's loss.
+                Esta amostra precisa se mover para cima e para a direita 
+                para diminuir a perda do gerador.
               </div>
             </div>
 
@@ -1318,18 +1318,18 @@ multiple layers. The layers can be turned on or off using checkboxes.">
               <canvas id="input-drawing-canvas" 
                 width="400" height="400"></canvas>
               <div id="drawing-instruction">
-                Draw a distribution above, then click the apply button.
+                Desenhe uma distribuição acima e clique no botão aplicar.
               </div>
               <button id="finish-drawing" 
                 class="mdl-button mdl-js-button mdl-button--raised">
-                Apply
+                Aplicar
               </button>
             </div>
           </div>
         </div>
 
         <div id="charts-panel" class="panel-item">
-          <div class="panel-title">Metrics</div>
+          <div class="panel-title">Métricas</div>
 
           <div id="chart-container">
             <canvas id="cost-chart" width="180" height="180"></canvas>

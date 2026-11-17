@@ -1,0 +1,64 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js (v8)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '8'
+
+      - name: Install dependencies
+        run: |
+          yarn prep
+
+      - name: Build and bundle demo
+        run: |
+          ./scripts/deploy-demo
+
+      - name: Assemble site distribution
+        run: |
+          mkdir -p dist
+          cp output/index.html dist/index.html
+          cp output/bundle.js dist/bundle.js
+          cp -r demo/figures dist/
+          cp -r demo/images dist/
+          cp -r demo/pretrained_models dist/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Sync to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
