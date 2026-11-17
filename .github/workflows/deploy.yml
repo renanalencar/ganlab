@@ -17,19 +17,19 @@ concurrency:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js (v8)
+      - name: Setup Node.js (v18)
         uses: actions/setup-node@v4
         with:
-          node-version: '8'
+          node-version: '18'
 
       - name: Install dependencies
         run: |
-          yarn prep
+          yarn --ignore-engines
 
       - name: Build and bundle demo
         run: |
@@ -44,6 +44,14 @@ jobs:
           cp -r demo/images dist/
           cp -r demo/pretrained_models dist/
 
+      - name: Deploy to GitHub Pages branch (gh-pages)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          force_orphan: true
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
@@ -55,10 +63,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-      - name: Sync to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
